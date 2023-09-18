@@ -13,7 +13,7 @@ const client = new Client({
 });
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
-const CHANNEL_ID = '1142072323311144962';
+const CHANNEL_ID = '1153467171150762025';
 const validTokens = new Set(['Kep9w4rCgMx09o', 'p67hP6WQssj0Km', 'Token3']);
 const messageQueue = [];
 
