@@ -46,7 +46,6 @@ client.once('ready', () => {
                     { name: '\u200B', value: '\u200B' },
                     { name: 'Token Symbol', value: transaction.tokenSymbol, inline: true },
                     { name: 'Chain', value: transaction.chain, inline: true },
-                    { name: '\u200B', value: '\u200B' },
                     { name: 'Amount', value: `${transaction.unitValue}`, inline: true },
                     { name: 'Amount in USD', value:  `$${parseFloat(transaction.historicalUSD).toFixed(2)}`, inline: true },
                     { name: 'View tx on', value: `[Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, inline: false },
