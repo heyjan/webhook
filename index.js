@@ -28,7 +28,7 @@ client.once('ready', () => {
 
             // Create the embed
             console.log(MessageEmbed);
-            const embed = new MessageEmbed();
+            const embed = new EmbedBuilder()
                 .setTitle("New Token Transfer!")
                 .setColor(0x3498db) // A nice blue color; you can change this
                 .addField('Token Symbol', transaction.tokenSymbol, true)
