@@ -27,23 +27,25 @@ client.once('ready', () => {
             const transaction = data.transfer;
 
             // Create the embed
-            const embed = new EmbedBuilder()
-                .setTitle("New Token Transfer!")
+            const arkhamWebhookEmbed = new EmbedBuilder()
                 .setColor(0x3498db) // A nice blue color; you can change this
-                .addField('Token Symbol', transaction.tokenSymbol, true)
-                .addField('Chain', transaction.chain, true)
-                .addField('\u200B', '\u200B')                       // Empty field to create a little space
-                .addField('Amount', `${transaction.unitValue}`, true)
-                .addField('Amount in USD', `$${parseFloat(transaction.historicalUSD).toFixed(2)}`, true)
-                .addField('tx', `[View on Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, true)
-                .addField('tx', `[View on Arkham](https://platform.arkhamintelligence.com/explorer/tx/${transaction.transactionHash})`, true)
-                .addField('time of transaction', transaction.blockTimestamp, false);
-                
-        
+                .setTitle('New Token Transfer!')
+
+                .addField(
+                    { name: 'Token Symbol', value: transaction.tokenSymbol, inline: true },
+                    { name: 'Chain', value: transaction.chain, inline: true },
+                	{ name: '\u200B', value: '\u200B' },
+                    { name: 'Amount', value: `${transaction.unitValue}`, inline: true },
+                    { name: 'Amount in USD', value:  `$${parseFloat(transaction.historicalUSD).toFixed(2)}`, inline: true },
+                    { name: 'tx', value: `[View on Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, inline: true },
+                    { name: 'tx', value: `[View on Arkham](https://platform.arkhamintelligence.com/explorer/tx/${transaction.transactionHash})`, inline: true },
+                    { name: 'time of transaction', value: transaction.blockTimestamp, inline: false },
+                  )  
+
             console.log(`Sending to Discord: ${JSON.stringify(data)}`);
             const channel = await client.channels.fetch(CHANNEL_ID);
             try {
-                await channel.send({ embeds: [embed] });
+                await channel.send({ embeds: [arkhamWebhookEmbed] });
             } catch (e) {
                 console.error(`Error sending message: ${e}`);
             }
