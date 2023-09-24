@@ -36,8 +36,8 @@ client.once('ready', () => {
                 .addField('Amount', `${transaction.unitValue}`, true)
                 .addField('Amount in USD', `$${parseFloat(transaction.historicalUSD).toFixed(2)}`, true)
                 .addField('tx', `[View on Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, true)
-                .addField('tx', `[View on Arkham](https://platform.arkhamintelligence.com/explorer/tx/${transaction.transactionHash})`, true);
-                .addField('time of transaction', transaction.blockTimestamp, false)
+                .addField('tx', `[View on Arkham](https://platform.arkhamintelligence.com/explorer/tx/${transaction.transactionHash})`, true)
+                .addField('time of transaction', transaction.blockTimestamp, false);
                 
         
             console.log(`Sending to Discord: ${JSON.stringify(data)}`);
