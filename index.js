@@ -31,7 +31,7 @@ client.once('ready', () => {
                 .setColor(0x3498db) // A nice blue color; you can change this
                 .setTitle('New Token Transfer!')
 
-                .addField(
+                .addFields(
                     { name: 'Token Symbol', value: transaction.tokenSymbol, inline: true },
                     { name: 'Chain', value: transaction.chain, inline: true },
                 	{ name: '\u200B', value: '\u200B' },
