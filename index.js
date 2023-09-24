@@ -27,18 +27,17 @@ client.once('ready', () => {
             const transaction = data.transfer;
 
             // Create the embed
-            console.log(MessageEmbed);
             const embed = new EmbedBuilder()
                 .setTitle("New Token Transfer!")
                 .setColor(0x3498db) // A nice blue color; you can change this
-                .addField('Token Symbol', transaction.tokenSymbol, true)
-                .addField('Chain', transaction.chain, true)
+                .addField('Token Symbol', transaction.tokenSymbol, inline: true)
+                .addField('Chain', transaction.chain, inline: true)
                 .addField('\u200B', '\u200B')                       // Empty field to create a little space
-                .addField('Amount', `${transaction.unitValue}`, true)
-                .addField('Amount in USD', `$${parseFloat(transaction.historicalUSD).toFixed(2)}`, true)
-                .addField('tx', `[View on Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, true)
-                .addField('tx', `[View on Arkham](https://platform.arkhamintelligence.com/explorer/tx/${transaction.transactionHash})`, true)
-                .addField('time of transaction', transaction.blockTimestamp, false);
+                .addField('Amount', `${transaction.unitValue}`, inline: true)
+                .addField('Amount in USD', `$${parseFloat(transaction.historicalUSD).toFixed(2)}`, inline: true)
+                .addField('tx', `[View on Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, inline: true)
+                .addField('tx', `[View on Arkham](https://platform.arkhamintelligence.com/explorer/tx/${transaction.transactionHash})`, inline: true)
+                .addField('time of transaction', transaction.blockTimestamp, inline: false);
                 
         
             console.log(`Sending to Discord: ${JSON.stringify(data)}`);
