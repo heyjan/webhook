@@ -45,10 +45,9 @@ client.once('ready', () => {
                 .addFields(
                     { name: 'Token Symbol', value: transaction.tokenSymbol, inline: true },
                     { name: 'Chain', value: transaction.chain, inline: true },
-                    { name: 'Amount', value: `${transaction.unitValue}`, inline: true },
+                    { name: 'Amount', value: `${transaction.unitValue}`, inline: false },
                     { name: 'Amount in USD', value:  `$${parseFloat(transaction.historicalUSD).toFixed(2)}`, inline: true },
-                    { name: '\u200B', value: '\u200B'},
-                    { name: 'View tx on', value: `[Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, inline: true },
+                    { name: 'View tx on', value: `[Etherscan](https://etherscan.io/tx/${transaction.transactionHash})`, inline: false },
                     { name: 'View tx on', value: `[Arkham](https://platform.arkhamintelligence.com/explorer/tx/${transaction.transactionHash})`, inline: true },
                     { name: 'time of transaction', value: transaction.blockTimestamp, inline: false },
                 )
