@@ -17,6 +17,7 @@ const alertChannelMap = {
     'BLZ Accumulatoors': '1153467171150762025', // Discord channel ID for 'BLZ Accumulatoors' alerts
     'Lever Top Holders': '1155319035286798446', // Discord channel ID for another alert type
     'DWF': '1155330376244396072', // Discord channel ID for DWF Labs
+    'BTC Whales': '1164295686465003550', // Discord channel ID for Solana alerts
     // ... Add other mappings as needed
 };
 const validTokens = new Set(['Kep9w4rCgMx09o', 'p67hP6WQssj0Km', 'Token3']);
